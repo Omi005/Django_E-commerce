@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Shopping Cart</h1>
+
+{% for item in items %}
+
+<div class="card p-3 mb-3">
+
+    <h4>{{ item.product.name }}</h4>
+
+    <p>
+        Quantity:
+
+        <a
+            href="{% url 'decrease_quantity' item.id %}"
+            class="btn btn-sm btn-warning"
+        >
+            -
+        </a>
+
+        {{ item.quantity }}
+
+        <a
+            href="{% url 'increase_quantity' item.id %}"
+            class="btn btn-sm btn-success"
+        >
+            +
+        </a>
+
+    </p>
+
+    <p>
+        Price:
+        ₹{{ item.product.price }}
+    </p>
+
+    <p>
+        Subtotal:
+        ₹{{ item.subtotal }}
+    </p>
+
+    <a
+        href="{% url 'remove_from_cart' item.id %}"
+        class="btn btn-danger"
+    >
+        Remove
+    </a>
+
+</div>
+
+{% empty %}
+
+<h4>Your cart is empty.</h4>
+
+{% endfor %}
+
+<hr>
+
+<h3>
+    Total Price:
+    ₹{{ total }}
+</h3>
+
+<div class="mt-4">
+
+    <a
+        href="{% url 'product_list' %}"
+        class="btn btn-secondary me-2"
+    >
+        🛍️ Continue Shopping
+    </a>
+
+    {% if items %}
+
+    <a
+        href="{% url 'place_order' %}"
+        class="btn btn-success"
+    >
+        ✅ Place Order
+    </a>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

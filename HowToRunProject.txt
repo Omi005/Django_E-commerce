@@ -1,0 +1,33 @@
+Django Ecommerce - How Start Project 
+
+1. Activate the virtual environment:
+Type =  source venv/bin/activate
+
+2. Start the Django development server:
+Type =  python manage.py runserver
+
+After the server starts, open or click:
+http://127.0.0.1:8000/
+
+When you're finished or closing the project:
+Type =  Ctrl + C
+deactivate
+
+
+
+
+How to Open the Django Admin Dashboard.
+
+1. Open your Django project in VS Code.
+
+5. Open your website:
+http://127.0.0.1:8000/
+
+6. In the browser address bar, change the URL http://127.0.0.1:8000/products/ to:
+http://127.0.0.1:8000/admin/    [In a new tab].
+
+7. Press Enter.
+
+8. Log in using your superuser username and password.
+
+You are now in the Django Admin Dashboard.

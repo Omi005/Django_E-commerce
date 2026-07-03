@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="mb-4">
+    Order #{{ order.id }}
+</h1>
+
+<div class="card p-3 mb-4">
+
+    <p>
+        <strong>Date:</strong>
+        {{ order.created_at }}
+    </p>
+
+    <p>
+        <strong>Status:</strong>
+        {{ order.status }}
+    </p>
+
+    <p>
+        <strong>Total:</strong>
+        ₹{{ order.total_price }}
+    </p>
+
+</div>
+
+<h3>Products</h3>
+
+{% for item in order.items.all %}
+
+<div class="card p-3 mb-3">
+
+    <h5>{{ item.product.name }}</h5>
+
+    <p>
+        Price: ₹{{ item.price }}
+    </p>
+
+    <p>
+        Quantity: {{ item.quantity }}
+    </p>
+
+    <p>
+    Subtotal:
+    ₹{{ item.subtotal }}
+</p>
+
+</div>
+
+{% endfor %}
+
+<hr>
+
+<a
+    href="{% url 'my_orders' %}"
+    class="btn btn-secondary"
+>
+    ← Back to My Orders
+</a>
+
+{% endblock %}
