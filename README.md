@@ -265,33 +265,33 @@ screenshots/
 Then display them like:
 
 ```md
-## Home Page
+## 🌙 Home Page (Dark Mode)
 
-![Home](screenshots/home.png)
+![Home Page - Dark Mode](screenshots/home-page-darkmode.png)
 
-## Products
+## ☀️ Home Page (Light Mode)
 
-![Products](screenshots/products.png)
+![Home Page - Light Mode](screenshots/home-page-lightmode.png)
 
-## Shopping Cart
+## 👤 User Profile
 
-![Cart](screenshots/cart.png)
+![User Profile](screenshots/profile-page.png)
 
-## Profile
+## 🛒 Shopping Cart
 
-![Profile](screenshots/profile.png)
+![Shopping Cart](screenshots/shopping-cart.png)
 
-## Orders
+## 📱 Mobile Layout
 
-![Orders](screenshots/orders.png)
+![Mobile Layout](screenshots/mobile-layout.png)
 
-## Admin Dashboard
+## ☰ Hamburger Menu
 
-![Admin](screenshots/admin-dashboard.png)
+![Hamburger Menu](screenshots/hamburger-options.png)
 
-## Dark Mode
+## 🛠️ Admin Dashboard
 
-![Dark Mode](screenshots/dark-mode.png)
+![Admin Dashboard](screenshots/admin-dashboard.png)
 ```
 
 ---
