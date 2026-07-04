@@ -60,11 +60,12 @@
 </button>
 
                 <a
-                    class="btn btn-light me-lg-2 mb-2 mb-lg-0"
-                    href="{% url 'cart' %}"
-                >
-                    🛒 Cart
-                </a>
+    id="cart-button"
+    class="btn btn-light me-lg-2 mb-2 mb-lg-0"
+    href="{% url 'cart' %}"
+>
+    🛒 Cart
+</a>
 
                 {% if user.is_authenticated %}
 

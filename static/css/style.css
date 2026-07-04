@@ -92,8 +92,7 @@ body.dark-mode h5,
 body.dark-mode h6,
 body.dark-mode p,
 body.dark-mode span,
-body.dark-mode strong,
-body.dark-mode a {
+body.dark-mode strong {
     color: #ffffff !important;
 }
 
@@ -104,3 +103,4 @@ body.dark-mode .product-image {
 body.dark-mode .navbar {
     background: #000000 !important;
 }
+
