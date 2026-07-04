@@ -134,7 +134,7 @@ django-ecommerce/
 ## Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/django-ecommerce.git
+git clone https://github.com/Omi005/Django_E-commerce 
 ```
 
 ```bash
@@ -242,29 +242,7 @@ The application includes a Dark/Light theme with:
 
 # 📸 Screenshots
 
-Create a folder named:
 
-```
-screenshots/
-```
-
-Example:
-
-```
-screenshots/
-│
-├── home.png
-├── products.png
-├── cart.png
-├── profile.png
-├── orders.png
-├── admin-dashboard.png
-└── dark-mode.png
-```
-
-Then display them like:
-
-```md
 ## 🌙 Home Page (Dark Mode)
 
 ![Home Page - Dark Mode](screenshots/home-page-darkmode.png)
@@ -292,7 +270,7 @@ Then display them like:
 ## 🛠️ Admin Dashboard
 
 ![Admin Dashboard](screenshots/admin-dashboard.png)
-```
+
 
 ---
 
