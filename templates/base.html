@@ -52,6 +52,13 @@
 
             <div class="ms-auto d-flex flex-column flex-lg-row align-items-lg-center mt-3 mt-lg-0">
 
+                <button
+    id="theme-toggle"
+    class="btn btn-outline-light me-lg-2 mb-2 mb-lg-0"
+>
+    🌙 Dark Mode
+</button>
+
                 <a
                     class="btn btn-light me-lg-2 mb-2 mb-lg-0"
                     href="{% url 'cart' %}"
@@ -140,6 +147,8 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="{% static 'js/theme.js' %}"></script>
 
 </body>
 </html>
