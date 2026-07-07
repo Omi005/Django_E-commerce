@@ -271,6 +271,10 @@ The application includes a Dark/Light theme with:
 
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 
+## 📍 Location
+
+![Location](screenshots/Location.png) 
+
 
 ---
 
