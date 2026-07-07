@@ -35,3 +35,9 @@ def product_detail(request, product_id):
             'product': product
         }
     )
+
+def about(request):
+    return render(
+        request,
+        'products/about.html'
+    )

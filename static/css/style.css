@@ -104,3 +104,47 @@ body.dark-mode .navbar {
     background: #000000 !important;
 }
 
+/* ===========================
+   About Us Hero Section
+=========================== */
+
+.hero-section {
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.hero-section h1,
+.hero-section p {
+    color: #212529;
+}
+
+/* ===========================
+   Technology Badges
+=========================== */
+
+body.dark-mode .badge {
+    border: 1px solid #ffffff;
+}
+
+body.dark-mode .badge.bg-dark {
+    background-color: #495057 !important;
+}
+
+body.dark-mode .badge.bg-info {
+    color: #ffffff !important;
+}
+
+body.dark-mode .badge.bg-warning {
+    color: #000000 !important;
+}
+
+/* Dark Mode */
+
+body.dark-mode .hero-section {
+    background-color: #1f1f1f !important;
+}
+
+body.dark-mode .hero-section h1,
+body.dark-mode .hero-section p {
+    color: #ffffff !important;
+}
