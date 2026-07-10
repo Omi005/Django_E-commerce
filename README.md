@@ -2,48 +2,55 @@
 
 A modern **E-Commerce Web Application** built with **Django** that allows users to browse products, manage their shopping cart, place orders, and manage their profiles through a responsive and user-friendly interface.
 
-The application follows Django's **Model-View-Template (MVT)** architecture and demonstrates full-stack web development using Django, Bootstrap, SQLite, HTML, CSS, and JavaScript.
+The project follows Django's **Model-View-Template (MVT)** architecture and demonstrates full-stack web development using **Python, Django, PostgreSQL, Bootstrap, HTML, CSS, and JavaScript**.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-### 👤 User Authentication
+## 👤 User Authentication
+
 - User Registration
 - Secure Login & Logout
 - Protected User Routes
 
-### 👤 User Profile
+## 👤 User Profile
+
 - View & Update Profile
 - Upload Profile Picture
 - Manage Address Information
 
-### 🛍️ Product Management
+## 🛍️ Product Management
+
 - Browse Products
 - Product Categories
-- Product Images
 - Product Details
+- Product Images
 - Stock Management
 
-### 🛒 Shopping Cart
+## 🛒 Shopping Cart
+
 - Add Products to Cart
 - Update Quantity
 - Remove Products
 - Automatic Subtotal Calculation
 
-### 📦 Order Management
+## 📦 Order Management
+
 - Place Orders
 - View Order History
 - Track Order Status
 
-Order Status:
+Supported Order Status:
+
 - Pending
 - Confirmed
 - Shipped
 - Delivered
 - Cancelled
 
-### 🛠️ Admin Dashboard
+## 🛠️ Admin Dashboard
+
 - Django Admin Panel
 - Manage Categories
 - Manage Products
@@ -51,9 +58,10 @@ Order Status:
 - Manage Users
 - Update Order Status
 
-### 🎨 User Experience
+## 🎨 User Experience
+
 - Responsive Design
-- Bootstrap 5 UI
+- Bootstrap 5
 - Mobile Friendly
 - Dark Mode / Light Mode
 - Theme Persistence using Local Storage
@@ -66,12 +74,12 @@ Order Status:
 |------------|----------|
 | Python | Programming Language |
 | Django 3 | Backend Framework |
+| PostgreSQL | Database |
+| Django ORM | Database ORM |
 | HTML5 | Markup |
 | CSS3 | Styling |
-| Bootstrap 5 | Responsive Design |
+| Bootstrap 5 | Responsive UI |
 | JavaScript | Client-side Functionality |
-| SQLite3 | Database |
-| Django ORM | Database Operations |
 
 ---
 
@@ -85,6 +93,7 @@ django-ecommerce/
 ├── media/
 ├── orders/
 ├── products/
+├── screenshots/
 ├── static/
 │   ├── css/
 │   └── js/
@@ -95,8 +104,9 @@ django-ecommerce/
 │   └── users/
 ├── users/
 ├── manage.py
-├── db.sqlite3
-└── requirements.txt
+├── requirements.txt
+├── .env (create your own)
+└── README.md
 ```
 
 ---
@@ -104,12 +114,14 @@ django-ecommerce/
 # 🗄️ Database Models
 
 ### Users
+
 - Profile
 - Address
 - Phone Number
 - Profile Picture
 
 ### Products
+
 - Category
 - Product
 - Price
@@ -117,11 +129,13 @@ django-ecommerce/
 - Product Image
 
 ### Cart
+
 - Cart Item
 - Quantity
 - Subtotal
 
 ### Orders
+
 - Order
 - Order Item
 - Order Status
@@ -131,17 +145,19 @@ django-ecommerce/
 
 # ⚙️ Installation
 
-## Clone the Repository
+## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/Omi005/Django_E-commerce 
+git clone https://github.com/Omi005/Django_E-commerce.git
 ```
 
 ```bash
-cd django-ecommerce
+cd Django_E-commerce
 ```
 
-## Create Virtual Environment
+---
+
+## 2️⃣ Create a Virtual Environment
 
 ### Windows
 
@@ -155,7 +171,7 @@ Activate
 venv\Scripts\activate
 ```
 
-### Linux/macOS
+### macOS / Linux
 
 ```bash
 python3 -m venv venv
@@ -164,7 +180,7 @@ source venv/bin/activate
 
 ---
 
-## Install Dependencies
+## 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -172,16 +188,65 @@ pip install -r requirements.txt
 
 ---
 
-## Apply Migrations
+## 4️⃣ Create a PostgreSQL Database
+
+Create a PostgreSQL database and user.
+
+Example:
+
+Database Name:
+
+```
+ecommerce_db
+```
+
+Database User:
+
+```
+your_database_user
+```
+
+Password:
+
+```
+your_password
+```
+
+---
+
+## 5️⃣ Create a `.env` File
+
+Create a file named:
+
+```
+.env
+```
+
+Add the following:
+
+```env
+SECRET_KEY=your_secret_key
+
+DEBUG=True
+
+DB_NAME=ecommerce_db
+DB_USER=your_database_user
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=5432
+```
+
+---
+
+## 6️⃣ Apply Migrations
 
 ```bash
-python manage.py makemigrations
 python manage.py migrate
 ```
 
 ---
 
-## Create Admin User
+## 7️⃣ Create a Superuser
 
 ```bash
 python manage.py createsuperuser
@@ -189,13 +254,13 @@ python manage.py createsuperuser
 
 ---
 
-## Run the Project
+## 8️⃣ Run the Development Server
 
 ```bash
 python manage.py runserver
 ```
 
-Open your browser and visit:
+Open your browser:
 
 ```
 http://127.0.0.1:8000/
@@ -210,9 +275,13 @@ The project supports:
 - Static CSS
 - JavaScript
 - Product Images
-- Profile Images
+- User Profile Images
 
-Media files are stored in the **media/** directory.
+Media files are stored inside:
+
+```
+media/
+```
 
 ---
 
@@ -232,49 +301,62 @@ Features include:
 
 # 🌙 Dark Mode
 
-The application includes a Dark/Light theme with:
+The application includes:
 
-- One-click Toggle
-- Persistent Theme using Local Storage
+- Dark Theme
+- Light Theme
+- Theme Persistence using Local Storage
 - Responsive Design
 
 ---
 
 # 📸 Screenshots
 
-
 ## 🌙 Home Page (Dark Mode)
 
 ![Home Page - Dark Mode](screenshots/home-page-darkmode.png)
+
+---
 
 ## ☀️ Home Page (Light Mode)
 
 ![Home Page - Light Mode](screenshots/home-page-lightmode.png)
 
+---
+
 ## 👤 User Profile
 
 ![User Profile](screenshots/profile-page.png)
+
+---
 
 ## 🛒 Shopping Cart
 
 ![Shopping Cart](screenshots/shopping-cart.png)
 
+---
+
 ## 📱 Mobile Layout
 
 ![Mobile Layout](screenshots/mobile-layout.png)
+
+---
 
 ## ☰ Hamburger Menu
 
 ![Hamburger Menu](screenshots/hamburger-options.png)
 
+---
+
 ## 🛠️ Admin Dashboard
 
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 
+---
+
 ## 📍 Location
 
-![Location](screenshots/Location.png) 
-
+![Location](screenshots/Location.png)
 
 ---
 
@@ -283,7 +365,7 @@ The application includes a Dark/Light theme with:
 - Product Search
 - Product Filtering
 - Wishlist
-- Online Payments (Stripe/Razorpay)
+- Online Payments (Stripe / Razorpay)
 - Product Reviews
 - Ratings
 - Coupons
@@ -295,9 +377,10 @@ The application includes a Dark/Light theme with:
 
 # 🤝 Contributing
 
-Contributions are welcome.
+Contributions are welcome!
 
 1. Fork the repository
+
 2. Create a new branch
 
 ```bash
@@ -307,10 +390,10 @@ git checkout -b feature-name
 3. Commit your changes
 
 ```bash
-git commit -m "Added new feature"
+git commit -m "Add new feature"
 ```
 
-4. Push
+4. Push to GitHub
 
 ```bash
 git push origin feature-name
@@ -322,13 +405,14 @@ git push origin feature-name
 
 # 👨‍💻 Author
 
-## Omkar
+## Omkar Khedekar
 
 GitHub:
+
 https://github.com/Omi005
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
-If you found this project helpful, consider giving it a ⭐ on GitHub!
+If you found this project helpful, please consider giving it a ⭐ on GitHub!
