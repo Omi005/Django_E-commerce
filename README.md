@@ -16,7 +16,8 @@ The project follows Django's **Model-View-Template (MVT)** architecture and demo
 
 ## 👤 User Profile
 
-- View & Update Profile
+- View Profile
+- Update Profile
 - Upload Profile Picture
 - Manage Address Information
 
@@ -75,7 +76,7 @@ Supported Order Status:
 | Python | Programming Language |
 | Django 3 | Backend Framework |
 | PostgreSQL | Database |
-| Django ORM | Database ORM |
+| Django ORM | ORM |
 | HTML5 | Markup |
 | CSS3 | Styling |
 | Bootstrap 5 | Responsive UI |
@@ -98,54 +99,37 @@ django-ecommerce/
 │   ├── css/
 │   └── js/
 ├── templates/
-│   ├── cart/
-│   ├── orders/
-│   ├── products/
-│   └── users/
 ├── users/
 ├── manage.py
 ├── requirements.txt
-├── .env (create your own)
+├── .env          # Create your own (not included)
+├── .gitignore
 └── README.md
 ```
 
 ---
 
-# 🗄️ Database Models
+# 🗄️ Database
 
-### Users
+This project uses **PostgreSQL** as the primary database.
 
-- Profile
-- Address
-- Phone Number
-- Profile Picture
-
-### Products
-
-- Category
-- Product
-- Price
-- Stock
-- Product Image
-
-### Cart
-
-- Cart Item
-- Quantity
-- Subtotal
-
-### Orders
-
-- Order
-- Order Item
-- Order Status
-- Total Price
+Database operations are handled using **Django ORM**.
 
 ---
 
-# ⚙️ Installation
+# ⚙️ Prerequisites
 
-## 1️⃣ Clone the Repository
+Before running the project, make sure you have installed:
+
+- Python 3.x
+- PostgreSQL
+- Git
+
+---
+
+# 🚀 Installation
+
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Omi005/Django_E-commerce.git
@@ -157,7 +141,7 @@ cd Django_E-commerce
 
 ---
 
-## 2️⃣ Create a Virtual Environment
+## 2. Create Virtual Environment
 
 ### Windows
 
@@ -180,7 +164,7 @@ source venv/bin/activate
 
 ---
 
-## 3️⃣ Install Dependencies
+## 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -188,33 +172,23 @@ pip install -r requirements.txt
 
 ---
 
-## 4️⃣ Create a PostgreSQL Database
+## 4. Create PostgreSQL Database
 
-Create a PostgreSQL database and user.
+Create a PostgreSQL database.
 
 Example:
 
-Database Name:
+Database Name
 
 ```
 ecommerce_db
 ```
 
-Database User:
-
-```
-your_database_user
-```
-
-Password:
-
-```
-your_password
-```
+Create a database user and assign the necessary privileges.
 
 ---
 
-## 5️⃣ Create a `.env` File
+## 5. Create a `.env` File
 
 Create a file named:
 
@@ -231,14 +205,14 @@ DEBUG=True
 
 DB_NAME=ecommerce_db
 DB_USER=your_database_user
-DB_PASSWORD=your_password
+DB_PASSWORD=your_database_password
 DB_HOST=localhost
 DB_PORT=5432
 ```
 
 ---
 
-## 6️⃣ Apply Migrations
+## 6. Apply Database Migrations
 
 ```bash
 python manage.py migrate
@@ -246,7 +220,7 @@ python manage.py migrate
 
 ---
 
-## 7️⃣ Create a Superuser
+## 7. Create an Admin User
 
 ```bash
 python manage.py createsuperuser
@@ -254,7 +228,7 @@ python manage.py createsuperuser
 
 ---
 
-## 8️⃣ Run the Development Server
+## 8. Run the Development Server
 
 ```bash
 python manage.py runserver
@@ -287,7 +261,7 @@ media/
 
 # 🔐 Authentication
 
-The application uses Django's built-in Authentication System.
+The application uses Django's built-in authentication system.
 
 Features include:
 
@@ -367,11 +341,25 @@ The application includes:
 - Wishlist
 - Online Payments (Stripe / Razorpay)
 - Product Reviews
-- Ratings
+- Product Ratings
 - Coupons
 - Email Notifications
 - Inventory Analytics
 - Sales Dashboard
+
+---
+
+# 💡 Project Highlights
+
+- Django MVT Architecture
+- PostgreSQL Database
+- Environment Variable Configuration (.env)
+- Responsive Bootstrap UI
+- Dark / Light Theme
+- Django Admin Dashboard
+- CRUD Operations
+- Authentication & Authorization
+- Clean Project Structure
 
 ---
 
@@ -413,6 +401,12 @@ https://github.com/Omi005
 
 ---
 
+# 📄 License
+
+This project is created for learning and portfolio purposes.
+
+---
+
 # ⭐ Support
 
-If you found this project helpful, please consider giving it a ⭐ on GitHub!
+If you found this project helpful, consider giving it a ⭐ on GitHub!
