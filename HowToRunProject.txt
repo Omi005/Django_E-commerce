@@ -31,3 +31,7 @@ http://127.0.0.1:8000/admin/    [In a new tab].
 8. Log in using your superuser username and password.
 
 You are now in the Django Admin Dashboard.
+
+9. PostgreSQL Extension 
+
+Pass = Omkar@123 
