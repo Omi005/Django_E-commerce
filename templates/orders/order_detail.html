@@ -52,11 +52,22 @@
 
 <hr>
 
-<a
-    href="{% url 'my_orders' %}"
-    class="btn btn-secondary"
->
-    ← Back to My Orders
-</a>
+<div class="mt-4">
+
+    <a
+        href="{% url 'my_orders' %}"
+        class="btn btn-secondary"
+    >
+        ← Back to My Orders
+    </a>
+
+    <a
+        href="{% url 'download_invoice' order.id %}"
+        class="btn btn-success ms-2"
+    >
+        📄 Download Invoice
+    </a>
+
+</div>
 
 {% endblock %}

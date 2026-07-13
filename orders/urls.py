@@ -15,8 +15,14 @@ urlpatterns = [
     ),
 
     path(
-    '<int:order_id>/',
-    views.order_detail,
-    name='order_detail'
-),
+        '<int:order_id>/',
+        views.order_detail,
+        name='order_detail'
+    ),
+
+    path(
+        '<int:order_id>/invoice/',
+        views.download_invoice,
+        name='download_invoice'
+    ),
 ]
