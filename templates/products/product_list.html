@@ -2,11 +2,138 @@
 
 {% block content %}
 
-<div class="container mt-4">
+<!-- =========================
+        Hero Section
+========================= -->
 
-    <h2 class="mb-4">All Products</h2>
+<section class="hero">
 
-    <div class="row">
+    <div class="row align-items-center">
+
+        <!-- Left Side -->
+
+        <div class="col-lg-6">
+
+            <span class="hero-badge">
+                🛍️ Premium Shopping Experience
+            </span>
+
+            <h1 class="hero-title mt-3">
+                Shop the Latest
+                <span class="text-primary">
+                    Tech,
+                </span>
+                Fashion &
+                Books
+            </h1>
+
+            <p class="hero-text mt-4">
+                Discover premium products at unbeatable prices.
+                Enjoy secure payments, fast delivery,
+                and a seamless shopping experience.
+            </p>
+
+            <div class="mt-4">
+
+                <a
+                    href="#products"
+                    class="btn btn-primary btn-lg me-3"
+                >
+                    🛒 Shop Now
+                </a>
+
+                <a
+                    href="#products"
+                    class="btn btn-outline-dark btn-lg"
+                >
+                    📚 Explore Products
+                </a>
+
+            </div>
+
+            <!-- Feature Cards -->
+
+            <div class="hero-features mt-5">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🚚
+                    </div>
+
+                    <div>
+
+                        <h6>Fast Delivery</h6>
+
+                        <small>Quick & Reliable</small>
+
+                    </div>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🔒
+                    </div>
+
+                    <div>
+
+                        <h6>Secure Payment</h6>
+
+                        <small>100% Protected</small>
+
+                    </div>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+
+                        <h6>Premium Quality</h6>
+
+                        <small>Best Products</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+
+        <div class="col-lg-6 text-center mt-5 mt-lg-0">
+
+            <img
+                src="/media/products/Hero.png"
+                alt="Hero Image"
+                class="img-fluid hero-image"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+        Products
+========================= -->
+
+<h2 id="products" class="mb-4 mt-5">
+
+    🔥 Explore Our Collection
+
+</h2>
+
+<div class="row">
 
     {% for product in products %}
 
@@ -81,7 +208,6 @@
 
     {% endfor %}
 
-</div>
 </div>
 
 {% endblock %}

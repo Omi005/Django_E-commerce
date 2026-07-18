@@ -148,3 +148,327 @@ body.dark-mode .hero-section h1,
 body.dark-mode .hero-section p {
     color: #ffffff !important;
 }
+
+/* ===========================
+   Homepage Hero Section
+=========================== */
+
+.hero{
+    background: linear-gradient(135deg,#eef4ff,#ffffff);
+    padding:70px 60px;
+    border-radius:25px;
+    margin-bottom:60px;
+    overflow:hidden;
+    position:relative;
+}
+
+.hero-badge{
+    display:inline-block;
+    background:#dbeafe;
+    color:#2563eb;
+    font-weight:600;
+    padding:10px 18px;
+    border-radius:50px;
+}
+
+.hero-title{
+    font-size:3.2rem;
+    font-weight:800;
+    line-height:1.2;
+}
+
+.hero-text{
+    font-size:1.15rem;
+    color:#6c757d;
+    max-width:520px;
+    line-height:1.8;
+}
+
+.hero-image{
+    max-width:100%;
+    width:520px;
+    animation:floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+.hero .btn{
+    padding:14px 28px;
+    border-radius:12px;
+}
+
+/* ===========================
+   Hero Dark Mode
+=========================== */
+
+body.dark-mode .hero{
+
+    background:linear-gradient(135deg,#1f2937,#111827);
+
+}
+
+body.dark-mode .hero-title{
+
+    color:#ffffff;
+
+}
+
+body.dark-mode .hero-text{
+
+    color:#d1d5db;
+
+}
+
+body.dark-mode .hero-badge{
+
+    background:#374151;
+    color:#60a5fa;
+
+}
+
+body.dark-mode .hero .btn-outline-dark{
+
+    border-color:#ffffff;
+    color:#ffffff;
+
+}
+
+body.dark-mode .hero .btn-outline-dark:hover{
+
+    background:#ffffff;
+    color:#000000;
+
+}
+
+/* ===========================
+   Hero Feature Cards
+=========================== */
+
+.hero-features{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.feature-card{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:#ffffff;
+    padding:16px 20px;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:all .3s ease;
+}
+
+.feature-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.feature-icon{
+    width:50px;
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.5rem;
+    background:#eaf3ff;
+    border-radius:50%;
+}
+
+.feature-card h6{
+    margin:0;
+    font-weight:700;
+}
+
+.feature-card small{
+    color:#6c757d;
+}
+
+/* ===========================
+   Hero Feature Cards Dark Mode
+=========================== */
+
+body.dark-mode .feature-card{
+    background:#1f1f1f;
+    border:1px solid #3a3a3a;
+}
+
+body.dark-mode .feature-icon{
+    background:#374151;
+}
+
+body.dark-mode .feature-card small{
+    color:#cbd5e1;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+.footer{
+    background:#111827;
+    color:#ffffff;
+    margin-top:80px;
+    padding:60px 0 25px;
+}
+
+.footer h4,
+.footer h5{
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.footer p{
+    color:#d1d5db;
+    line-height:1.8;
+}
+
+.footer ul{
+    padding:0;
+}
+
+.footer ul li{
+    margin-bottom:12px;
+}
+
+.footer a{
+    color:#d1d5db;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer a:hover{
+    color:#60a5fa;
+    padding-left:5px;
+}
+
+.footer hr{
+    border-color:#374151;
+    margin:35px 0 20px;
+}
+
+.footer .text-center{
+    color:#9ca3af;
+}
+
+/* ===========================
+   Social Icons
+=========================== */
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#1f2937;
+    color:#ffffff;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:1.2rem;
+    transition:all .3s ease;
+}
+
+.social-icons a:hover{
+    background:#2563eb;
+    color:#ffffff;
+    transform:translateY(-5px) scale(1.08);
+}
+
+/* ===========================
+   Footer Mobile
+=========================== */
+
+@media (max-width:768px){
+
+    .footer{
+        text-align:center;
+    }
+
+    .footer .row{
+        row-gap:20px;
+    }
+
+    .footer .col-md-6{
+        text-align:center !important;
+    }
+
+    .footer .social-icons{
+        justify-content:center;
+    }
+
+}
+
+/* ===========================
+   Back To Top Button
+=========================== */
+
+.back-to-top{
+
+    position:fixed;
+    bottom:30px;
+    right:30px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#0d6efd;
+    color:#ffffff;
+
+    font-size:1.4rem;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:all .3s ease;
+
+    z-index:999;
+
+}
+
+.back-to-top:hover{
+
+    transform:translateY(-5px);
+
+    background:#0b5ed7;
+
+}
+
+/* Show Button */
+
+.back-to-top.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
