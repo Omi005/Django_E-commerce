@@ -69,7 +69,14 @@
     class="btn btn-light me-lg-2 mb-2 mb-lg-0"
     href="{% url 'cart' %}"
 >
-    🛒 Cart
+    🛒 Cart ({{ cart_count }})
+</a>
+
+<a
+    class="btn btn-danger me-lg-2 mb-2 mb-lg-0"
+    href="{% url 'wishlist' %}"
+>
+    ❤️ Wishlist ({{ wishlist_count }})
 </a>
 
 <a

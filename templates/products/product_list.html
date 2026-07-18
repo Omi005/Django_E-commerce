@@ -183,20 +183,44 @@
                     </a>
 
                     {% if product.stock > 0 %}
-                    <a
-                        href="{% url 'add_to_cart' product.id %}"
-                        class="btn btn-primary w-100"
-                    >
-                        🛒 Add to Cart
-                    </a>
-                    {% else %}
-                    <button
-                        class="btn btn-secondary w-100"
-                        disabled
-                    >
-                        Out of Stock
-                    </button>
-                    {% endif %}
+
+<a
+    href="{% url 'add_to_cart' product.id %}"
+    class="btn btn-primary w-100 mb-2"
+>
+    🛒 Add to Cart
+</a>
+
+{% if product.id in wishlist_product_ids %}
+
+<a
+    href="{% url 'remove_from_wishlist' product.id %}"
+    class="btn btn-danger w-100"
+>
+    ❤️ Remove from Wishlist
+</a>
+
+{% else %}
+
+<a
+    href="{% url 'add_to_wishlist' product.id %}"
+    class="btn btn-outline-danger w-100"
+>
+    🤍 Add to Wishlist
+</a>
+
+{% endif %}
+
+{% else %}
+
+<button
+    class="btn btn-secondary w-100"
+    disabled
+>
+    Out of Stock
+</button>
+
+{% endif %}
 
                 </div>
 

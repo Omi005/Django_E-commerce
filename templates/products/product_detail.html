@@ -40,11 +40,18 @@
     </p>
 
     <a
-        href="{% url 'add_to_cart' product.id %}"
-        class="btn btn-primary"
-    >
-        Add to Cart
-    </a>
+    href="{% url 'add_to_cart' product.id %}"
+    class="btn btn-primary me-2"
+>
+    🛒 Add to Cart
+</a>
+
+<a
+    href="{% url 'add_to_wishlist' product.id %}"
+    class="btn btn-outline-danger"
+>
+    ❤️ Add to Wishlist
+</a>
 
 </div>
 
