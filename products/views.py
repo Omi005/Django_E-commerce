@@ -1,18 +1,21 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Q
 
 from .models import Product, Wishlist
 
 
 def product_list(request):
-    query = request.GET.get('q')
+    query = request.GET.get("q", "").strip()
 
-    products = Product.objects.all()
+    products = Product.objects.select_related("category").all()
 
     if query:
         products = products.filter(
-            name__icontains=query
+            Q(name__icontains=query) |
+            Q(description__icontains=query) |
+            Q(category__name__icontains=query)
         )
 
     wishlist_product_ids = []
@@ -21,17 +24,17 @@ def product_list(request):
         wishlist_product_ids = Wishlist.objects.filter(
             user=request.user
         ).values_list(
-            'product_id',
+            "product_id",
             flat=True
         )
 
     return render(
         request,
-        'products/product_list.html',
+        "products/product_list.html",
         {
-            'products': products,
-            'query': query,
-            'wishlist_product_ids': wishlist_product_ids,
+            "products": products,
+            "query": query,
+            "wishlist_product_ids": wishlist_product_ids,
         }
     )
 

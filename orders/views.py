@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.contrib import messages
+from django.views.decorators.http import require_POST
 
 from reportlab.platypus import (
     SimpleDocTemplate,
@@ -408,3 +410,30 @@ def download_invoice(request, order_id):
     doc.build(elements)
 
     return response
+
+@login_required
+@require_POST
+def cancel_order(request, order_id):
+    order = get_object_or_404(
+        Order,
+        id=order_id,
+        user=request.user
+    )
+
+    cancellable_statuses = ["Pending", "Confirmed"]
+
+    if order.status in cancellable_statuses:
+        order.status = "Cancelled"
+        order.save(update_fields=["status"])
+
+        messages.success(
+            request,
+            f"Order #{order.id} has been cancelled successfully."
+        )
+    else:
+        messages.error(
+            request,
+            "This order can no longer be cancelled."
+        )
+
+    return redirect("order_detail", order_id=order.id)
