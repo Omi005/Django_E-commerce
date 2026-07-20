@@ -4,6 +4,8 @@ A modern **E-Commerce Web Application** built with **Django** that allows users 
 
 The project follows Django's **Model-View-Template (MVT)** architecture and demonstrates full-stack web development using **Python, Django, PostgreSQL, Bootstrap, HTML, CSS, and JavaScript**.
 
+Users can search the catalogue, save products to a wishlist, manage their cart, place and cancel eligible orders, and download PDF invoices. Store administrators can manage products, stock, customers, and order statuses through Django Admin.
+
 ---
 
 # ✨ Features
@@ -13,6 +15,7 @@ The project follows Django's **Model-View-Template (MVT)** architecture and demo
 - User Registration
 - Secure Login & Logout
 - Protected User Routes
+- Automatic profile creation for new users
 
 ## 👤 User Profile
 
@@ -28,6 +31,8 @@ The project follows Django's **Model-View-Template (MVT)** architecture and demo
 - Product Details
 - Product Images
 - Stock Management
+- Search by product name, description, or category
+- Wishlist with add and remove actions
 
 ## 🛒 Shopping Cart
 
@@ -35,12 +40,17 @@ The project follows Django's **Model-View-Template (MVT)** architecture and demo
 - Update Quantity
 - Remove Products
 - Automatic Subtotal Calculation
+- Cart item count in the navigation bar
+- Stock-aware quantity limits and out-of-stock messaging
 
 ## 📦 Order Management
 
 - Place Orders
 - View Order History
+- View Order Details and Ordered Items
 - Track Order Status
+- Cancel pending or confirmed orders
+- Download PDF invoices with customer, order, and item details
 
 Supported Order Status:
 
@@ -58,6 +68,7 @@ Supported Order Status:
 - Manage Orders
 - Manage Users
 - Update Order Status
+- Manage wishlists, cart items, customer profiles, and profile images
 
 ## 🎨 User Experience
 
@@ -66,6 +77,7 @@ Supported Order Status:
 - Mobile Friendly
 - Dark Mode / Light Mode
 - Theme Persistence using Local Storage
+- Polished storefront hero, product search, responsive product grid, and back-to-top control
 
 ---
 
@@ -74,13 +86,16 @@ Supported Order Status:
 | Technology | Purpose |
 |------------|----------|
 | Python | Programming Language |
-| Django 3 | Backend Framework |
+| Django 4.2 | Backend Framework |
 | PostgreSQL | Database |
 | Django ORM | ORM |
 | HTML5 | Markup |
 | CSS3 | Styling |
 | Bootstrap 5 | Responsive UI |
 | JavaScript | Client-side Functionality |
+| Pillow | Product and profile image handling |
+| ReportLab | PDF invoice generation |
+| python-dotenv | Environment variable configuration |
 
 ---
 
@@ -90,16 +105,26 @@ Supported Order Status:
 django-ecommerce/
 │
 ├── cart/
+│   ├── models.py         # User cart items and quantities
+│   └── views.py          # Cart management
 ├── ecommerce/
+│   ├── settings.py       # Project and database configuration
+│   └── urls.py           # Root URL configuration
 ├── media/
+│   ├── products/         # Uploaded product images
+│   └── profile_pics/     # User profile images
 ├── orders/
+│   ├── models.py         # Orders and order items
+│   └── views.py          # Ordering, cancellation, and invoices
 ├── products/
+│   ├── models.py         # Categories, products, and wishlists
+│   └── views.py          # Catalogue, search, and wishlist actions
 ├── screenshots/
 ├── static/
 │   ├── css/
 │   └── js/
-├── templates/
-├── users/
+├── templates/            # Shared, product, cart, order, and user pages
+├── users/                # Authentication and user profile management
 ├── manage.py
 ├── requirements.txt
 ├── .env          # Create your own (not included)
@@ -250,6 +275,7 @@ The project supports:
 - JavaScript
 - Product Images
 - User Profile Images
+- PDF invoices generated on demand (not stored as media files)
 
 Media files are stored inside:
 
@@ -270,6 +296,20 @@ Features include:
 - Logout
 - Profile Management
 - Secure Authentication
+
+All cart, wishlist, profile, and order-history pages require an authenticated user.
+
+---
+
+# 📦 Orders & Invoices
+
+When an order is placed, each cart item is saved as an order item with its quantity and purchase price. The cart is then cleared, and customers can:
+
+- Review their full order history
+- Open an order detail page
+- Track its status: `Pending`, `Confirmed`, `Shipped`, `Delivered`, or `Cancelled`
+- Cancel orders that are still pending or confirmed
+- Download a computer-generated PDF invoice
 
 ---
 
@@ -336,16 +376,17 @@ The application includes:
 
 # 🚀 Future Improvements
 
-- Product Search
 - Product Filtering
-- Wishlist
 - Online Payments (Stripe / Razorpay)
 - Product Reviews
 - Product Ratings
 - Coupons
 - Email Notifications
+- Delivery address snapshots and shipment tracking
+- Returns and refund workflow
 - Inventory Analytics
 - Sales Dashboard
+- Automated tests and production deployment configuration
 
 ---
 
@@ -360,6 +401,10 @@ The application includes:
 - CRUD Operations
 - Authentication & Authorization
 - Clean Project Structure
+- Product search and wishlist support
+- Stock-aware cart management
+- Order cancellation and downloadable PDF invoices
+- Responsive storefront with theme persistence
 
 ---
 
