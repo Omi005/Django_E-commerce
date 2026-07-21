@@ -328,13 +328,13 @@ The application includes:
 
 ## 🌙 Home Page (Light Mode)
 
-![Home Page - Light Mode](screenshots/HomePage Light.png)
+![Home Page - Light Mode](screenshots/HomePageLight.png)
 
 ---
 
 ## ☀️ Home Page (Dark Mode)
 
-![Home Page - Dark Mode](screenshots/HomePage Dark.png)
+![Home Page - Dark Mode](screenshots/HomePageDark.png)
 
 ---
 
