@@ -326,51 +326,51 @@ The application includes:
 
 # 📸 Screenshots
 
-## 🌙 Home Page (Dark Mode)
+## 🌙 Home Page (Light Mode)
 
-![Home Page - Dark Mode](screenshots/home-page-darkmode.png)
+![Home Page - Light Mode](screenshots/HomePage Light.png)
 
 ---
 
-## ☀️ Home Page (Light Mode)
+## ☀️ Home Page (Dark Mode)
 
-![Home Page - Light Mode](screenshots/home-page-lightmode.png)
+![Home Page - Dark Mode](screenshots/HomePage Dark.png)
 
 ---
 
 ## 👤 User Profile
 
-![User Profile](screenshots/profile-page.png)
+![User Profile](screenshots/UserProfile.png)
 
 ---
 
 ## 🛒 Shopping Cart
 
-![Shopping Cart](screenshots/shopping-cart.png)
+![Shopping Cart](screenshots/ShoppingCart.png)
 
 ---
 
 ## 📱 Mobile Layout
 
-![Mobile Layout](screenshots/mobile-layout.png)
+![Mobile Layout](screenshots/MobileLayout.png)
 
 ---
 
 ## ☰ Hamburger Menu
 
-![Hamburger Menu](screenshots/hamburger-options.png)
+![Hamburger Menu](screenshots/Hamburger.png)
 
 ---
 
 ## 🛠️ Admin Dashboard
 
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard](screenshots/AdminDashboard.png)
 
 ---
 
 ## 📍 Location
 
-![Location](screenshots/Location.png)
+![Location](screenshots/LocationMap.png)
 
 ---
 
