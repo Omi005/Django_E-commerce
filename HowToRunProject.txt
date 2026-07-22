@@ -34,4 +34,4 @@ You are now in the Django Admin Dashboard.
 
 9. PostgreSQL Extension 
 
-Pass = Omkar@123 
+Pass = 
