@@ -3,32 +3,44 @@ from . import views
 
 urlpatterns = [
     path(
-        'place/',
+        "checkout/",
+        views.checkout,
+        name="checkout"
+    ),
+
+    path(
+        "place/",
         views.place_order,
-        name='place_order'
+        name="place_order"
     ),
 
     path(
-    '<int:order_id>/cancel/',
-    views.cancel_order,
-    name='cancel_order'
+        "<int:order_id>/cancel/",
+        views.cancel_order,
+        name="cancel_order"
     ),
 
     path(
-        'my-orders/',
+        "my-orders/",
         views.my_orders,
-        name='my_orders'
+        name="my_orders"
     ),
 
     path(
-        '<int:order_id>/',
+        "<int:order_id>/",
         views.order_detail,
-        name='order_detail'
+        name="order_detail"
     ),
 
     path(
-        '<int:order_id>/invoice/',
+        "<int:order_id>/invoice/",
         views.download_invoice,
-        name='download_invoice'
+        name="download_invoice"
+    ),
+
+    path(
+    "success/<int:order_id>/",
+    views.order_success,
+    name="order_success"
     ),
 ]

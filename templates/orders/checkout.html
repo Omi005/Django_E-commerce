@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">Checkout</h2>
+
+<div class="card p-4">
+
+    <h4>Order Summary</h4>
+
+    <hr>
+
+    {% for item in items %}
+
+        <div class="d-flex justify-content-between mb-2">
+
+            <div>
+                {{ item.product.name }} × {{ item.quantity }}
+            </div>
+
+            <div>
+                ₹{{ item.subtotal }}
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+    <hr>
+
+    <h4 class="text-end">
+        Total : ₹{{ total }}
+    </h4>
+
+    <hr>
+
+    <form method="POST" action="{% url 'place_order' %}">
+        {% csrf_token %}
+
+        <div class="mt-4 text-end">
+            <button
+                type="submit"
+                class="btn btn-success btn-lg"
+            >
+                🛒 Place Order (Cash on Delivery)
+            </button>
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

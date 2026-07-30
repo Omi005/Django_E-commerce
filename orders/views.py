@@ -20,6 +20,27 @@ from users.models import Profile
 
 
 @login_required
+def checkout(request):
+
+    cart_items = CartItem.objects.filter(user=request.user)
+
+    if not cart_items.exists():
+        return redirect("cart")
+
+    total = sum(item.subtotal for item in cart_items)
+
+    
+
+    return render(
+        request,
+        "orders/checkout.html",
+        {
+            "items": cart_items,
+            "total": total,
+        }
+    )
+
+@login_required
 def place_order(request):
 
     cart_items = CartItem.objects.filter(
@@ -27,14 +48,32 @@ def place_order(request):
     )
 
     if not cart_items.exists():
-        return redirect('cart')
+        return redirect("cart")
 
+    # Create Order
     order = Order.objects.create(
-        user=request.user
+        user=request.user,
+        payment_method="COD",
+        payment_status="Pending"
     )
 
     total = 0
 
+    # Check stock
+    for item in cart_items:
+
+        if item.quantity > item.product.stock:
+
+            messages.error(
+                request,
+                f"Sorry, only {item.product.stock} unit(s) of '{item.product.name}' are available."
+            )
+
+            order.delete()
+
+            return redirect("cart")
+
+    # Create Order Items
     for item in cart_items:
 
         OrderItem.objects.create(
@@ -44,17 +83,21 @@ def place_order(request):
             price=item.product.price
         )
 
-        total += (
-            item.product.price *
-            item.quantity
-        )
+        item.product.stock -= item.quantity
+        item.product.save()
+
+        total += item.product.price * item.quantity
 
     order.total_price = total
     order.save()
 
+    # Empty Cart
     cart_items.delete()
 
-    return redirect('my_orders')
+    return redirect(
+        "order_success",
+        order_id=order.id
+    ) 
 
 
 @login_required
@@ -264,14 +307,14 @@ def download_invoice(request, order_id):
 
     elements.append(
         Paragraph(
-            "<b>Payment Method:</b> Cash on Delivery",
+            f"<b>Payment Method:</b> {order.get_payment_method_display()}",
             styles["Normal"]
         )
     )
 
     elements.append(
         Paragraph(
-            "<b>Payment Status:</b> Pending",
+            f"<b>Payment Status:</b> {order.payment_status}",
             styles["Normal"]
         )
     )
@@ -437,3 +480,20 @@ def cancel_order(request, order_id):
         )
 
     return redirect("order_detail", order_id=order.id)
+
+@login_required
+def order_success(request, order_id):
+
+    order = get_object_or_404(
+        Order,
+        id=order_id,
+        user=request.user
+    )
+
+    return render(
+        request,
+        "orders/order_success.html",
+        {
+            "order": order
+        }
+    )

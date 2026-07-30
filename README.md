@@ -43,14 +43,19 @@ Users can search the catalogue, save products to a wishlist, manage their cart, 
 - Cart item count in the navigation bar
 - Stock-aware quantity limits and out-of-stock messaging
 
+---
+
 ## 📦 Order Management
 
-- Place Orders
+- Place Cash on Delivery (COD) Orders
+- Order Success Page
 - View Order History
-- View Order Details and Ordered Items
+- View Order Details
 - Track Order Status
-- Cancel pending or confirmed orders
-- Download PDF invoices with customer, order, and item details
+- Cancel Pending or Confirmed Orders
+- Download PDF Invoices
+- Download Invoice directly from the Order Success page
+- Automatic stock reduction after successful order placement
 
 Supported Order Status:
 
@@ -59,6 +64,8 @@ Supported Order Status:
 - Shipped
 - Delivered
 - Cancelled
+
+---
 
 ## 🛠️ Admin Dashboard
 
@@ -69,6 +76,8 @@ Supported Order Status:
 - Manage Users
 - Update Order Status
 - Manage wishlists, cart items, customer profiles, and profile images
+
+---
 
 ## 🎨 User Experience
 
@@ -303,13 +312,22 @@ All cart, wishlist, profile, and order-history pages require an authenticated us
 
 # 📦 Orders & Invoices
 
-When an order is placed, each cart item is saved as an order item with its quantity and purchase price. The cart is then cleared, and customers can:
+Customers can place orders using **Cash on Delivery (COD)**.
 
-- Review their full order history
-- Open an order detail page
-- Track its status: `Pending`, `Confirmed`, `Shipped`, `Delivered`, or `Cancelled`
+When an order is placed:
+
+- Stock is automatically reduced
+- Cart items are converted into order items
+- The shopping cart is cleared
+- An order confirmation page is displayed
+
+Customers can then:
+
+- View their complete order history
+- Open individual order details
+- Track order status (`Pending`, `Confirmed`, `Shipped`, `Delivered`, `Cancelled`)
 - Cancel orders that are still pending or confirmed
-- Download a computer-generated PDF invoice
+- Download a computer-generated PDF invoice from both the Order Success page and Order Details page
 
 ---
 
@@ -376,17 +394,18 @@ The application includes:
 
 # 🚀 Future Improvements
 
+- Online Payment Integration (Stripe / Razorpay)
 - Product Filtering
-- Online Payments (Stripe / Razorpay)
 - Product Reviews
 - Product Ratings
-- Coupons
+- Coupons & Discounts
 - Email Notifications
-- Delivery address snapshots and shipment tracking
-- Returns and refund workflow
+- Shipment Tracking
+- Returns & Refund Workflow
 - Inventory Analytics
 - Sales Dashboard
-- Automated tests and production deployment configuration
+- Automated Tests
+- Production Deployment
 
 ---
 
@@ -395,16 +414,21 @@ The application includes:
 - Django MVT Architecture
 - PostgreSQL Database
 - Environment Variable Configuration (.env)
-- Responsive Bootstrap UI
+- Responsive Bootstrap 5 UI
 - Dark / Light Theme
 - Django Admin Dashboard
 - CRUD Operations
 - Authentication & Authorization
+- Product Search
+- Wishlist
+- Shopping Cart
+- Cash on Delivery Checkout
+- Order History & Order Details
+- Order Cancellation
+- PDF Invoice Generation
+- Automatic Stock Management
+- Responsive Storefront
 - Clean Project Structure
-- Product search and wishlist support
-- Stock-aware cart management
-- Order cancellation and downloadable PDF invoices
-- Responsive storefront with theme persistence
 
 ---
 

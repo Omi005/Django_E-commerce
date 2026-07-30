@@ -34,6 +34,24 @@ class Order(models.Model):
         default='Pending'
     )
 
+    PAYMENT_STATUS_CHOICES = [
+        ('Pending', 'Pending'),
+        ('Paid', 'Paid'),
+        ('Failed', 'Failed'),
+        ('Refunded', 'Refunded'),
+    ]
+
+    payment_status = models.CharField(
+        max_length=20,
+        choices=PAYMENT_STATUS_CHOICES,
+        default='Pending'
+    )
+
+    payment_method = models.CharField(
+    max_length=20,
+    default='COD'
+    )
+
     def __str__(self):
         return f"Order #{self.id}"
 
